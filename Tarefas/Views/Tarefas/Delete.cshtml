@@ -1,0 +1,47 @@
+﻿@model Tarefas.Models.Tarefa
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Deseja excluir essa tarefa?</h2>
+
+
+<div>
+    <h4>Tarefa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Concluido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Concluido)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" />
+        </div>
+    }
+</div>
